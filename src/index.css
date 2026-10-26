@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  .font-mono,
+  .tabular-nums {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Clean CSS micro-transitions for shopping cart additions */
+@keyframes cart-badge-pop {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@keyframes subtle-btn-highlight {
+  0% { transform: scale(0.98); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slide-in-bar {
+  0% { transform: translateY(8px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes toast-slide-fade {
+  0% { transform: translate(-50%, 10px); opacity: 0; }
+  100% { transform: translate(-50%, 0); opacity: 1; }
+}
+
+.animate-badge-pop {
+  animation: cart-badge-pop 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-btn-pop {
+  animation: subtle-btn-highlight 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-slide-up-subtle {
+  animation: slide-in-bar 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-toast-in {
+  animation: toast-slide-fade 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-receipt,
+  #printable-receipt * {
+    visibility: visible;
+  }
+  #printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}

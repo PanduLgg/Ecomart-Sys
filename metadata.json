@@ -1,0 +1,8 @@
+{
+  "name": "Ecomart-Billing",
+  "description": "Sistem Kasir (POS), Manajemen Stok Real-Time, Analisa Bisnis, dan Katalog Koperasi Sekolah Ecomart.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
